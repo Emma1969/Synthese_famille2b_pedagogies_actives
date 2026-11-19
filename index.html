@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#385848">
+<meta name="description" content="Guide interactif autonome de la famille 2b : approche par projet, pédagogies actives, classe inversée et analyse des apprentissages.">
+<title>Famille 2b — Projet et pédagogies actives | Guide 3PDG260</title>
+<style>
+:root{--fond:#F6F7F2;--carte:#fff;--texte:#25342B;--texte2:#4E6254;--bordure:#DCE3D9;--encre:#385848;--inter:#526F55;--inter-f:#EFF3E9;--ok:#34694B;--nok:#91483B;--proc:#406D59;--proc-f:#ECF3EB;--strat:#80634A;--strat-f:#F4EFE7;--rais:#426F68;--rais-f:#EAF3EF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--fond);color:var(--texte);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;font-size:17px;line-height:1.65}
+a{color:var(--encre)}
+:focus-visible{outline:3px solid var(--inter);outline-offset:2px}
+.saut{position:absolute;left:-999px;top:0;background:var(--encre);color:#fff;padding:.6rem 1rem;z-index:50}
+.saut:focus{left:1rem}
+.mise{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+nav.menu{background:linear-gradient(165deg,#385848 0%,#28483A 100%);color:#fff;padding:1.6rem 1rem;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav.menu .titre-guide{font-size:.85rem;letter-spacing:.04em;opacity:.85;margin:0 0 .3rem}
+nav.menu h2{font-size:1.15rem;margin:0 0 1.2rem;color:#fff;line-height:1.3}
+nav.menu ol{list-style:none;padding:0;margin:0}
+nav.menu li a{display:block;color:#fff;text-decoration:none;padding:.5rem .7rem;border-radius:8px;font-size:.95rem;border-left:3px solid transparent}
+nav.menu li a:hover{background:rgba(255,255,255,.1)}
+nav.menu li a.actif{background:rgba(255,255,255,.16);border-left-color:#fff}
+nav.menu .legende-menu{margin-top:1.5rem;font-size:.82rem;opacity:.95;border-top:1px solid rgba(255,255,255,.25);padding-top:1rem}
+nav.menu .legende-menu div{margin:.45rem 0}
+main{padding:2.3rem clamp(1rem,4vw,3.5rem) 4rem;max-width:1100px;width:100%;min-width:0}
+section{padding-top:1.5rem;margin-bottom:3rem;border-bottom:1px solid var(--bordure);scroll-margin-top:1rem}
+section:last-of-type{border-bottom:0}
+h1{font-size:2rem;color:var(--encre);line-height:1.25;margin:.5rem 0 1rem}
+h2{font-size:1.6rem;color:var(--encre);margin:0 0 1rem;line-height:1.3}
+h3{font-size:1.2rem;color:var(--encre);margin:1.65rem 0 .7rem}
+h4{font-size:1.03rem;margin:1rem 0 .4rem}
+.chapeau{font-size:1.1rem;color:var(--texte2)}
+.carte{background:var(--carte);border:1px solid var(--bordure);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 4px 20px rgba(35,56,44,.035)}
+.grille3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.fam{border-radius:12px;padding:1rem 1.2rem;border:1px solid;min-width:0}
+.fam h4{margin-top:0}
+.fam.p{background:var(--proc-f);border-color:var(--proc)}.fam.p h4{color:var(--proc)}
+.fam.s{background:var(--strat-f);border-color:var(--strat)}.fam.s h4{color:var(--strat)}
+.fam.r{background:var(--rais-f);border-color:var(--rais)}.fam.r h4{color:var(--rais)}
+.etiq{display:inline-block;font-size:.8rem;font-weight:700;padding:.12rem .55rem;border-radius:999px;border:1px solid}
+.etiq.p{color:var(--proc);border-color:var(--proc);background:var(--proc-f)}
+.etiq.s{color:var(--strat);border-color:var(--strat);background:var(--strat-f)}
+.etiq.r{color:var(--rais);border-color:var(--rais);background:var(--rais-f)}
+.encadre{border-left:5px solid;border-radius:0;padding:.9rem 1.2rem;margin:1.2rem 0;background:var(--carte)}
+.encadre .tete{font-weight:700;margin-bottom:.3rem}
+.encadre.vigil{border-color:var(--nok)}.encadre.vigil .tete{color:var(--nok)}
+.encadre.garder{border-color:var(--ok)}.encadre.garder .tete{color:var(--ok)}
+.encadre.cua{border-color:var(--encre)}.encadre.cua .tete{color:var(--encre)}
+.activite{background:var(--inter-f);border:1px solid #B5C9B7;border-radius:14px;padding:1.2rem 1.4rem;margin:1.8rem 0}
+.activite>.tete{color:var(--inter);font-weight:750;font-size:1.1rem;margin-bottom:.4rem}
+.activite .consigne{margin-top:0}
+.defile{overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:1rem 0;background:var(--carte);font-size:.95rem}
+th,td{border:1px solid var(--bordure);padding:.6rem .7rem;text-align:left;vertical-align:top}
+thead th{background:var(--encre);color:#fff}tbody th{background:#F2F5EF}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--carte);border:1px solid var(--inter);color:var(--inter);border-radius:8px;padding:.47rem .9rem;margin:.2rem .3rem .2rem 0}
+.btn:hover{background:#E8EFE7}.btn.plein{background:var(--inter);color:#fff}
+.item{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;margin:.7rem 0}
+.item fieldset{border:0;padding:0;margin:0;min-width:0}
+.item legend{font-weight:700;margin:0 0 .6rem;padding:0}
+.choix{display:flex;align-items:flex-start;gap:.55rem;margin:.48rem 0;cursor:pointer}
+.choix input{margin-top:.42rem;flex-shrink:0;accent-color:var(--inter)}
+.retro{margin-top:.6rem;padding:.6rem .8rem;border-radius:8px;font-size:.95rem}
+.retro.ok{border:1px solid var(--ok);color:#1E5420;background:#EBF4ED}
+.retro.nok{border:1px solid var(--nok);color:#79392D;background:#FBEEEB}
+.retro.neutre{border:1px solid #B8C9B8;background:#fff;color:var(--texte2)}
+.onglets{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;border-bottom:2px solid var(--encre)}
+.onglets button{background:var(--carte);border:1px solid var(--bordure);border-bottom:0;border-radius:8px 8px 0 0;padding:.55rem .9rem;color:var(--encre)}
+.onglets button[aria-selected="true"]{background:var(--encre);color:#fff;border-color:var(--encre)}
+.panneau{background:var(--carte);border:1px solid var(--bordure);border-top:0;border-radius:0 0 12px 12px;padding:1.2rem 1.4rem}
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}
+.role{border:1px solid var(--bordure);border-radius:10px;padding:.8rem 1rem;background:#FCFDFB}
+.role h4{margin-top:0;font-size:.98rem;color:var(--encre)}
+.role ul{margin:.3rem 0 0;padding-left:1.1rem}
+.coche label{display:flex;gap:.6rem;align-items:flex-start;padding:.35rem 0}
+.coche input{width:1.15rem;height:1.15rem;margin-top:.25rem;accent-color:var(--inter)}
+select{font:inherit;padding:.55rem;border-radius:7px;border:1px solid var(--texte2);max-width:100%;background:#fff;color:var(--texte)}
+details{background:var(--carte);border:1px solid var(--bordure);border-radius:10px;padding:.65rem 1rem;margin:.8rem 0}
+summary{cursor:pointer;font-weight:650;color:var(--encre)}
+.refs li{margin:.45rem 0;font-size:.93rem}
+.haut{display:inline-block;margin-top:1rem;font-size:.9rem}
+.mobile-menu{display:none}
+.progression{height:4px;position:fixed;top:0;left:0;right:0;z-index:30;pointer-events:none}
+.progression span{display:block;height:100%;width:0;background:#8FB99D;transition:width .12s linear}
+.intro-hero{position:relative;background:linear-gradient(138deg,#E6EEE5 0%,#F3F5ED 60%,#FBFCF8 100%);border:1px solid #CEDCCD;border-radius:20px;padding:2rem clamp(1.2rem,3.4vw,2.6rem);overflow:hidden;margin:-.35rem 0 1.5rem}
+.intro-hero::after{content:"";position:absolute;width:235px;height:235px;border:38px solid rgba(111,151,121,.10);border-radius:50%;right:-90px;top:-90px;pointer-events:none}
+.sur-titre{display:inline-flex;align-items:center;gap:.55rem;color:#426451;text-transform:uppercase;letter-spacing:.11em;font-size:.75rem;font-weight:800;margin:0 0 1rem}
+.sur-titre::before{content:"";width:21px;height:2px;background:#759781}
+.intro-hero h1{font-size:clamp(2rem,3.6vw,3.15rem);max-width:780px;margin:0 0 1rem;line-height:1.13;letter-spacing:-.035em}
+.intro-hero .chapeau{font-size:1.08rem;max-width:760px;color:#42594A;margin:0 0 1.4rem}
+.actions-accueil{display:flex;flex-wrap:wrap;gap:.7rem;position:relative;z-index:1}
+.action{display:inline-flex;align-items:center;gap:.6rem;border:1px solid #6F9577;border-radius:9px;padding:.65rem 1rem;text-decoration:none;font-weight:700;font-size:.93rem;line-height:1.35;background:#fff;color:#385848}
+.action.principale{background:#385848;color:#fff;border-color:#385848}
+.action:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(39,70,52,.12)}
+.parcours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1.2rem 0 1.8rem}
+.parcours a{display:block;text-decoration:none;color:var(--texte);background:#fff;border:1px solid var(--bordure);border-radius:12px;padding:1rem 1.1rem;min-width:0}
+.parcours a:hover{border-color:#88A892;background:#FBFDF9}
+.parcours strong{display:block;color:var(--encre);font-size:.98rem}
+.parcours span{display:block;font-size:.88rem;color:var(--texte2);line-height:1.5;margin-top:.28rem}
+.note-methode{background:#F0F4EB;border:1px solid #C8D8C5;border-radius:10px;padding:.9rem 1rem;font-size:.94rem;color:#344D3A}
+.chap-num{display:inline-block;color:#688373;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .4rem}
+.note-lecture{font-size:.9rem;color:var(--texte2);margin-top:-.1rem}
+.revision-intro{display:flex;flex-wrap:wrap;gap:.55rem;margin:.8rem 0 1.2rem}
+.revision-intro span{display:inline-block;background:#ECF3EB;color:#385848;border:1px solid #BDD1BE;border-radius:999px;padding:.24rem .7rem;font-size:.85rem;font-weight:650}
+.revision-cas{background:#fff;border:1px solid #C7D6C5;border-radius:14px;padding:1rem 1.3rem;margin:1rem 0}
+.revision-cas h3{margin:.2rem 0 .7rem}
+.revision-etape{background:#fff;border:1px solid var(--bordure);border-radius:13px;padding:1.2rem 1.3rem;margin:1.1rem 0}
+.revision-etape h3{margin:.1rem 0 .5rem;font-size:1.12rem}
+.revision-etape textarea{width:100%;min-height:108px;resize:vertical;border:1px solid #AEBFAF;border-radius:9px;padding:.7rem .8rem;color:var(--texte);font:inherit;line-height:1.5}
+.revision-etape label.prompt{display:block;font-weight:650;margin:.55rem 0 .5rem;color:var(--encre)}
+.revision-verif{background:#F5F8F3;border:1px solid #D6E0D3;border-radius:10px;padding:.8rem 1rem;margin:1rem 0}
+.revision-verif p{font-weight:650;color:var(--encre);margin:0 0 .35rem}
+.revision-verif label{display:flex;align-items:flex-start;gap:.55rem;padding:.24rem 0;font-size:.93rem}
+.revision-verif input{width:1.1rem;height:1.1rem;margin-top:.22rem;accent-color:var(--inter);flex-shrink:0}
+.revision-pied{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-top:1rem}
+.revision-compteur{font-weight:700;color:var(--encre);margin:.3rem 0}
+.revision-avertissement{font-size:.88rem;color:var(--texte2);margin:.5rem 0}
+.pratique-texte{background:#F8FBF7;border-left:3px solid #8BA88F;padding:.7rem 1rem;margin:.65rem 0;font-style:italic}
+.questions{padding-left:1.35rem}.questions li{margin-bottom:.55rem}
+.mini-chaine{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1rem 0}
+.mini-chaine span{background:#EAF3EF;border:1px solid #B7D0C1;padding:.5rem .65rem;border-radius:8px;font-size:.9rem;font-weight:650}
+.mini-chaine b{color:var(--inter)}
+.petit{font-size:.9rem;color:var(--texte2)}
+@media(max-width:860px){.mise{grid-template-columns:1fr}nav.menu{position:static;height:auto;padding:1rem 1rem .8rem}nav.menu h2{margin:0;font-size:1rem}nav.menu .titre-guide{margin-bottom:.2rem}.mobile-menu{display:inline-flex;float:right;align-items:center;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:.35rem .7rem;font-size:.9rem}nav.menu ol,nav.menu .legende-menu{display:none}nav.menu.ouvert ol,nav.menu.ouvert .legende-menu{display:block}nav.menu ol{margin-top:1rem}main{padding-top:1.3rem}.parcours{grid-template-columns:1fr}}
+@media(max-width:560px){body{font-size:16px}h2{font-size:1.42rem}.intro-hero{padding:1.4rem}.intro-hero h1{font-size:2rem}.grille3,.roles{grid-template-columns:minmax(0,1fr)}.activite,.panneau{padding:1rem}.mini-chaine{display:block}.mini-chaine span{display:block;margin:.35rem 0}.mini-chaine b{display:none}}
+@media print{nav.menu,.saut,.actions-accueil,.parcours,.progression,.activite button,.revision-pied,.mobile-menu{display:none}.mise{display:block}body{background:#fff}.intro-hero{border:0;padding:.5rem 0;background:#fff}.panneau[hidden]{display:block!important}.revision-etape textarea{min-height:60px}}
+</style>
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<div class="progression" aria-hidden="true"><span id="progression-barre"></span></div>
+<div class="mise">
+<nav class="menu" aria-label="Sections du guide">
+  <button type="button" class="mobile-menu" id="mobile-menu" aria-expanded="false" aria-controls="liens-navigation">☰ Menu</button>
+  <p class="titre-guide">3PDG260 · Approches pédagogiques</p>
+  <h2>Famille 2b · Projet et pédagogies actives</h2>
+  <ol id="liens-navigation">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#fondements">0. Apprendre en faisant… et en pensant</a></li>
+    <li><a href="#demarches">1. Trois notions à distinguer</a></li>
+    <li><a href="#choisir">2. Concevoir un projet qui fait apprendre</a></li>
+    <li><a href="#conduire">3. Accompagner les quatre moments</a></li>
+    <li><a href="#evaluer">4. Évaluer, réguler, rendre accessible</a></li>
+    <li><a href="#revision">5. Mon laboratoire d'analyse</a></li>
+    <li><a href="#cloture">Aide-mémoire et références</a></li>
+  </ol>
+  <div class="legende-menu">
+    <div>▣ Approche par projet : production signifiante</div>
+    <div>◉ Pédagogie active : décisions et réflexion</div>
+    <div>△ Classe inversée : organisation du temps</div>
+    <div>✎ Activités pour apprendre en autonomie</div>
+  </div>
+</nav>
+<main id="contenu">
+
+<section id="accueil" aria-labelledby="t-accueil">
+  <div class="intro-hero">
+    <p class="sur-titre">3PDG260 · Guide d'approfondissement · Famille 2b</p>
+    <h1 id="t-accueil">Approche par projet et pédagogies actives : faire, choisir, ajuster, comprendre</h1>
+    <p class="chapeau">Une réalisation motivante ne garantit pas un apprentissage. Ce guide aide à relier une action ou une production à des savoirs précis, à l'activité intellectuelle des élèves et aux occasions de rétroaction.</p>
+    <div class="actions-accueil">
+      <a class="action principale" href="#demarches">Comprendre les différences</a>
+      <a class="action" href="#revision">Essayer les cas autonomes</a>
+      <a class="action" href="#cloture">Consulter l'aide-mémoire</a>
+    </div>
+  </div>
+  <div class="note-methode"><strong>À noter :</strong> cette famille n'a pas été approfondie en classe cette année et <strong>ne fait pas partie de l'évaluation finale actuelle</strong>. Ce guide constitue une ressource d'exploration et un point de départ pour une prochaine année de cours.</div>
+  <p class="note-lecture">Utilisation autonome : explorez les exemples, tentez les questions interactives, puis choisissez une vignette fictive. Les rétroactions ne constituent pas un corrigé unique. Le fichier fonctionne sans connexion; les références externes demandent une connexion pour être ouvertes.</p>
+  <div class="parcours">
+    <a href="#fondements"><strong>Comprendre l'essentiel</strong><span>Pourquoi « faire quelque chose » ne suffit pas à apprendre.</span></a>
+    <a href="#choisir"><strong>Planifier une situation</strong><span>Savoirs, décisions des élèves, jalons, rôle de l'enseignante.</span></a>
+    <a href="#revision"><strong>Essayer et s'autoévaluer</strong><span>Trois vignettes, cinq réflexions, rétroactions et export.</span></a>
+  </div>
+  <div class="activite"><div class="tete">✎ Avant de commencer : quelle est votre intuition?</div><p class="consigne">Laquelle de ces affirmations décrit le mieux une pédagogie active qui soutient l'apprentissage?</p><div data-quiz="diagnostic"></div></div>
+  <div class="carte"><h3 style="margin-top:0">Au terme de ce guide, vous pourrez :</h3>
+    <ol>
+      <li><strong>Distinguer</strong> l'approche par projet, les pédagogies actives et la classe inversée, sans les confondre.</li>
+      <li><strong>Analyser</strong> ce que les élèves apprennent lorsqu'ils produisent, décident, testent, reçoivent de la rétroaction et révisent leur travail.</li>
+      <li><strong>Planifier</strong> une réalisation signifiante avec des objectifs, des jalons, des ressources et des critères de réussite cohérents.</li>
+      <li><strong>Repérer</strong> les limites d'une tâche séduisante mais peu exigeante intellectuellement, puis proposer un ajustement.</li>
+      <li><strong>Choisir</strong> des traces d'apprentissage et des soutiens CUA qui préservent les décisions intellectuelles importantes.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="fondements" aria-labelledby="t-fondements">
+  <p class="chap-num">Chapitre 0</p>
+  <h2 id="t-fondements">L'activité ne devient éducative que si les élèves apprennent de l'expérience</h2>
+  <p>La famille 2b organise les apprentissages autour d'une <strong>production, d'une action ou d'une expérience signifiante</strong>. Les élèves réalisent quelque chose, mais surtout ils mobilisent des connaissances, prennent des décisions, examinent leurs résultats et révisent leur compréhension.</p>
+  <div class="mini-chaine" aria-label="Repères d'une activité qui fait apprendre"><span>Une réalisation qui a du sens</span><b>→</b><span>Des savoirs à mobiliser</span><b>→</b><span>Des choix et des essais</span><b>→</b><span>Rétroaction et révision</span><b>→</b><span>Retour réflexif</span></div>
+  <p class="petit">Ce sont des repères qui peuvent se chevaucher ou se répéter, pas une succession mécanique imposée à toutes les situations.</p>
+  <div class="grille3">
+    <article class="fam p"><h4>Une action signifiante</h4><p>Les élèves créent ou améliorent un objet, une explication, une proposition ou un service pour un usage ou un public identifié.</p></article>
+    <article class="fam s"><h4>Un raisonnement nécessaire</h4><p>Les savoirs servent à comparer, choisir, justifier, vérifier ou ajuster. Une production « réussie » sur le plan visuel ne suffit pas.</p></article>
+    <article class="fam r"><h4>Un retour sur l'expérience</h4><p>Les élèves sont amenés à reconnaître ce qui a changé dans leur pensée, les stratégies utiles et les raisons d'une amélioration.</p></article>
+  </div>
+  <h3>Les repères théoriques du cours</h3>
+  <div class="defile"><table>
+    <thead><tr><th>Repère</th><th>Ce qu'il aide à observer</th></tr></thead><tbody>
+      <tr><th>Dewey</th><td>L'expérience devient éducative lorsqu'elle ouvre une enquête, se relie à d'autres expériences et fait l'objet d'une réflexion.</td></tr>
+      <tr><th>Kilpatrick</th><td>Une activité intentionnelle et porteuse de sens organise le projet.</td></tr>
+      <tr><th>Freinet</th><td>Le tâtonnement, l'expression, la coopération et la production peuvent servir de ressorts d'apprentissage.</td></tr>
+      <tr><th>Perrenoud</th><td>Une situation complexe invite à mobiliser et articuler plusieurs compétences.</td></tr>
+      <tr><th>Blumenfeld et coll.</th><td>Les projets soutiennent l'apprentissage lorsqu'une question, des ressources, des critères et des aides orientent l'activité.</td></tr>
+      <tr><th>Bonwell et Eison / Prince</th><td>L'activité intellectuelle et la réflexion des élèves sont essentielles à l'apprentissage actif, au-delà de l'occupation.</td></tr>
+    </tbody></table></div>
+  <div class="encadre garder"><div class="tete">✓ Une lecture nuancée avec Houssaye</div><p>Quand l'enseignante clarifie les contenus et les critères, la relation <strong>enseignante–savoir (« enseigner »)</strong> peut être plus visible. Lorsque les élèves choisissent, construisent et révisent leur production en mobilisant les connaissances, la relation <strong>élèves–savoir (« apprendre »)</strong> peut passer au premier plan. Le soutien et la régulation des échanges mettent aussi en jeu la relation <strong>enseignante–élèves (« former »)</strong>. On analyse les moments, sans attribuer une relation fixe à la famille.</p></div>
+  <div class="encadre vigil"><div class="tete">! Le piège : la réussite apparente d'une production</div><p>Une exposition peut être magnifique, un jardin bien aménagé ou un balado très fluide, sans que les élèves puissent expliquer les raisons de leurs choix. La question centrale reste : <strong>quels savoirs sont mobilisés, que décident les élèves et comment le savons-nous?</strong></p></div>
+  <div class="activite"><div class="tete">✎ De l'action à l'apprentissage</div><p class="consigne">Quelle observation renseigne réellement sur l'apprentissage?</p><div data-quiz="fondements"></div></div>
+</section>
+
+<section id="demarches" aria-labelledby="t-demarches">
+  <p class="chap-num">Chapitre 1</p>
+  <h2 id="t-demarches">Trois notions proches, mais non interchangeables</h2>
+  <p>La distinction suivante est importante : <strong>l'approche par projet est une démarche particulière</strong>; les <strong>pédagogies actives sont un ensemble plus large de pratiques</strong>; la <strong>classe inversée est d'abord une organisation</strong> du temps et de l'accès aux ressources. Elles peuvent être combinées.</p>
+  <div class="grille3">
+    <article class="fam p">
+      <span class="etiq p">Une démarche</span><h4>Approche par projet</h4>
+      <p><strong>Exemple :</strong> préparer une mini-exposition proposant des aménagements favorables à la biodiversité de la cour d'école.</p>
+      <p><strong>Ce que font les élèves :</strong> cerner une intention, rechercher des informations, planifier, produire, justifier et améliorer leur proposition.</p>
+      <p><strong>Ce qui doit rester visible :</strong> connaissances mobilisées, décisions, critères, étapes et révisions.</p>
+      <p><strong>Piège :</strong> fabriquer d'abord une affiche, puis chercher après coup quel apprentissage elle pourrait illustrer.</p>
+    </article>
+    <article class="fam s">
+      <span class="etiq s">Un ensemble de pratiques</span><h4>Pédagogies actives</h4>
+      <p><strong>Exemple :</strong> comparer deux montages, prédire lequel fonctionnera mieux, tester, expliquer les écarts et réviser l'hypothèse.</p>
+      <p><strong>Ce que font les élèves :</strong> émettre des hypothèses, argumenter, classer, simuler, résoudre, interpréter ou concevoir.</p>
+      <p><strong>Ce qui doit rester visible :</strong> une pensée qui évolue et des preuves utilisées pour décider.</p>
+      <p><strong>Piège :</strong> croire que bouger, manipuler ou changer de station suffit à rendre l'apprentissage actif.</p>
+    </article>
+    <article class="fam r">
+      <span class="etiq r">Une organisation</span><h4>Classe inversée</h4>
+      <p><strong>Exemple :</strong> découvrir une courte ressource avant la classe, puis utiliser le temps accompagné pour comparer et construire des explications.</p>
+      <p><strong>Ce que font les élèves :</strong> se préparer à leur rythme et réaliser en classe un travail intellectuel accompagné.</p>
+      <p><strong>Ce qui doit rester visible :</strong> les apprentissages que la nouvelle organisation rend possibles.</p>
+      <p><strong>Piège :</strong> remplacer une leçon en classe par une vidéo à la maison sans transformer l'activité cognitive.</p>
+    </article>
+  </div>
+  <div class="defile"><table>
+    <caption>Comparer à partir de la fonction pédagogique, pas du nom</caption>
+    <thead><tr><th>Question</th><th>Approche par projet</th><th>Pédagogies actives</th><th>Classe inversée</th></tr></thead>
+    <tbody>
+      <tr><th>Ce qui organise</th><td>Un défi et une production ou action signifiante</td><td>Une tâche qui exige de penser et d'agir intellectuellement</td><td>Une répartition différente du temps et des premières ressources</td></tr>
+      <tr><th>Les décisions des élèves</th><td>Choisir des étapes, des ressources, des critères, ajuster une réalisation</td><td>Prédire, tester, classer, argumenter, revoir une idée</td><td>Se préparer, puis raisonner en classe avec un soutien disponible</td></tr>
+      <tr><th>La preuve intéressante</th><td>Traces des choix, révisions et justification de la production</td><td>Raisonnement observable et évolution des conceptions</td><td>Qualité du travail réalisé grâce au temps réorganisé</td></tr>
+      <tr><th>La limite courante</th><td>Se concentrer sur le produit au détriment du savoir</td><td>Accumuler des manipulations sans réflexion</td><td>Externaliser un cours magistral sans gain pédagogique</td></tr>
+    </tbody>
+  </table></div>
+  <div class="encadre garder"><div class="tete">✓ Les familles peuvent se combiner</div><p>Un projet peut commencer par un enseignement explicite d'une méthode (famille 1), comporter une investigation (famille 2a) et organiser des échanges coopératifs (famille 3). La famille 2b éclaire alors la <strong>mobilisation progressive des savoirs dans une réalisation signifiante</strong>. Il faut expliquer les choix à partir des actions réelles, sans enfermer chaque activité dans une case.</p></div>
+  <div class="activite"><div class="tete">✎ Ne pas confondre les dispositifs</div><p class="consigne">Choisissez l'analyse la plus prudente pour chaque situation.</p><div data-quiz="demarches"></div></div>
+</section>
+
+<section id="choisir" aria-labelledby="t-choisir">
+  <p class="chap-num">Chapitre 2</p>
+  <h2 id="t-choisir">Planifier une réalisation qui exige de mobiliser des savoirs</h2>
+  <p>La question n'est pas d'abord « Quel produit attrayant pourrait-on fabriquer? », mais <strong>« Quels apprentissages cette réalisation rendra-t-elle nécessaires, et qu'auront à décider les élèves? »</strong></p>
+  <div class="carte"><h3 style="margin-top:0">Cinq décisions de conception</h3><ol>
+    <li><strong>Définir les apprentissages.</strong> Quelles connaissances et opérations intellectuelles les élèves doivent-ils mobiliser?</li>
+    <li><strong>Choisir un défi et un destinataire.</strong> À qui ou à quoi servira la production? Quel problème réel ou simulé mettra les apprentissages en jeu?</li>
+    <li><strong>Préciser la latitude des élèves.</strong> Sur quoi peuvent-ils décider : questions, méthodes, ressources, critères, supports ou ajustements?</li>
+    <li><strong>Prévoir jalons, ressources et rétroactions.</strong> Quand vérifiera-t-on une compréhension et que pourra-t-on modifier avant de livrer?</li>
+    <li><strong>Anticiper les traces.</strong> Quels documents, échanges, décisions et justifications permettront de reconnaître les apprentissages individuels?</li>
+  </ol></div>
+  <h3>Un même projet : deux scénarios très différents</h3>
+  <div class="grille3">
+    <div class="fam p"><h4>Scénario A · La fabrication d'abord</h4><p>L'enseignante fournit le modèle de panneau, les textes à recopier et les images. Les élèves montent une exposition sur la biodiversité. On évalue surtout le résultat esthétique.</p><p><strong>Question :</strong> quelle décision intellectuelle leur reste-t-il?</p></div>
+    <div class="fam s"><h4>Scénario B · Les savoirs au service des choix</h4><p>Les élèves déterminent quelles espèces ou conditions documenter, justifient deux aménagements avec des sources et révisent leurs panneaux après une rétroaction.</p><p><strong>Question :</strong> quels savoirs doivent-ils comprendre pour défendre leur proposition?</p></div>
+    <div class="fam r"><h4>Un projet court peut suffire</h4><p>En une ou deux périodes, les élèves peuvent concevoir, tester et améliorer une capsule explicative ou une maquette simple. La durée seule ne détermine pas la qualité du projet.</p><p><strong>Question :</strong> quelles décisions et quels retours seront réellement possibles?</p></div>
+  </div>
+  <div class="encadre vigil"><div class="tete">! Autonomie ne veut pas dire abandon</div><p>Une tâche ouverte demande <strong>un cadre d'autant plus lisible</strong> : objectifs, critères, temps, ressources, étapes, exemples de traces et moments de régulation. Expliquer une technique ou une notion pendant le projet peut aider les élèves sans leur retirer les décisions importantes.</p></div>
+  <div class="activite"><div class="tete">✎ Ajuster un projet trop fermé</div><p class="consigne">Choisissez la modification qui rend un apprentissage nécessaire.</p><div data-quiz="choisir"></div></div>
+</section>
+
+<section id="conduire" aria-labelledby="t-conduire">
+  <p class="chap-num">Chapitre 3</p>
+  <h2 id="t-conduire">Quatre moments pour apprendre, produire et réviser</h2>
+  <p>Ces moments reprennent les repères du support de cours. Cliquez pour comparer le rôle de l'enseignante, l'activité cognitive des élèves et les traces possibles. Un projet peut revenir plusieurs fois sur une étape.</p>
+  <div class="onglets" role="tablist" aria-label="Moments d'une approche par projet" id="onglets-moments">
+    <button type="button" role="tab" id="tab-0" aria-controls="pan-0" aria-selected="true" tabindex="0">1. Lancer</button>
+    <button type="button" role="tab" id="tab-1" aria-controls="pan-1" aria-selected="false" tabindex="-1">2. Planifier</button>
+    <button type="button" role="tab" id="tab-2" aria-controls="pan-2" aria-selected="false" tabindex="-1">3. Produire et ajuster</button>
+    <button type="button" role="tab" id="tab-3" aria-controls="pan-3" aria-selected="false" tabindex="-1">4. Présenter et objectiver</button>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-0" aria-labelledby="tab-0" tabindex="0">
+    <h3 style="margin-top:0">1. Lancer : comprendre pourquoi on va produire</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Présente une situation signifiante, le public ou la finalité de la production.</li><li>Rend compréhensibles les objectifs d'apprentissage et les critères.</li><li>Fait émerger les premières conceptions et les questions.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Définissent ce qu'ils cherchent à accomplir et pourquoi.</li><li>Formulent des questions pertinentes.</li><li>Relient le défi à des connaissances existantes.</li></ul></div></div>
+    <p><strong>Relance :</strong> « À quoi servira notre production, et que faudra-t-il comprendre pour la réussir? »</p><p class="petit">Trace possible : question de départ, idées initiales, critères proposés.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-1" aria-labelledby="tab-1" tabindex="0" hidden>
+    <h3 style="margin-top:0">2. Planifier : organiser les décisions et les ressources</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Propose des jalons et des outils de suivi accessibles.</li><li>Fournit les ressources nécessaires à la démarche.</li><li>Soutient les choix tout en préservant la recherche et la justification.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Déterminent les questions à traiter, les méthodes et les ressources.</li><li>Établissent des priorités et répartissent des responsabilités réelles.</li><li>Justifient un plan en fonction des contraintes.</li></ul></div></div>
+    <p><strong>Relance :</strong> « Quelles données devrez-vous recueillir avant de choisir votre solution? »</p><p class="petit">Trace possible : plan de travail annoté, calendrier, choix documentés.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-2" aria-labelledby="tab-2" tabindex="0" hidden>
+    <h3 style="margin-top:0">3. Produire et ajuster : utiliser les rétroactions</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Observe les décisions, les erreurs fécondes et les impasses.</li><li>Propose des questions ou un enseignement ciblé lorsque nécessaire.</li><li>Organise la rétroaction à un moment où une révision est encore possible.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Construisent, testent et comparent leur production aux critères.</li><li>Expliquent leurs choix à l'aide des savoirs mobilisés.</li><li>Modifient une idée ou un prototype à partir de preuves et de rétroactions.</li></ul></div></div>
+    <p><strong>Relance :</strong> « Quelle information nous pousse à modifier notre première idée? »</p><p class="petit">Trace possible : version initiale et version révisée avec justification.</p>
+  </div>
+  <div class="panneau" role="tabpanel" id="pan-3" aria-labelledby="tab-3" tabindex="0" hidden>
+    <h3 style="margin-top:0">4. Présenter et objectiver : rendre les apprentissages explicites</h3>
+    <div class="roles"><div class="role"><h4>L'enseignante</h4><ul><li>Prévoit une présentation authentique ou une mise en commun adaptée.</li><li>Fait expliciter les raisons des choix et les connaissances utilisées.</li><li>Invite à réfléchir aux apprentissages et aux améliorations possibles.</li></ul></div><div class="role"><h4>Les élèves</h4><ul><li>Présentent leur réalisation avec des arguments.</li><li>Expliquent les changements entre les versions.</li><li>Identifient ce qu'ils savent faire maintenant et ce qu'ils réutiliseraient.</li></ul></div></div>
+    <p><strong>Relance :</strong> « Quelle décision montre le mieux ce que vous avez appris? »</p><p class="petit">Trace possible : justification individuelle, bilan de démarche, transfert.</p>
+  </div>
+  <div class="encadre garder"><div class="tete">✓ Une production n'est pas la fin du raisonnement</div><p>Une présentation finale peut devenir le point de départ d'une objectivation : quelles connaissances ont été mobilisées? Comment les choix ont-ils changé? Qu'est-ce qui était difficile et que ferait-on autrement?</p></div>
+  <div class="activite"><div class="tete">✎ Quand rétroagir?</div><p class="consigne">Choisissez l'intervention qui laisse une possibilité réelle de progresser.</p><div data-quiz="conduire"></div></div>
+</section>
+
+<section id="evaluer" aria-labelledby="t-evaluer">
+  <p class="chap-num">Chapitre 4</p>
+  <h2 id="t-evaluer">Évaluer les apprentissages, pas seulement l'objet terminé</h2>
+  <p>Dans une pédagogie de projet, le produit final est une <strong>trace possible</strong>, mais son apparence ne suffit pas toujours à inférer ce que chaque élève sait, comprend ou peut transférer. Il faut réfléchir à l'<strong>alignement</strong> entre l'objectif, les tâches, les traces et les critères.</p>
+  <div class="defile"><table>
+    <caption>Choisir des indices qui éclairent les apprentissages</caption>
+    <thead><tr><th>Outil ou trace</th><th>Ce qu'il permet de constater</th><th>Ce qui reste à vérifier</th></tr></thead>
+    <tbody>
+      <tr><th>Produit collectif</th><td>Intégration apparente de certains savoirs et qualité de la proposition commune</td><td>Compréhension et contribution de chaque élève</td></tr>
+      <tr><th>Carnet ou journal de projet</th><td>Choix, essais, obstacles, rétroactions reçues, révisions</td><td>Qualité des explications si les entrées restent descriptives</td></tr>
+      <tr><th>Justification individuelle</th><td>Raisonnement personnel reliant un choix à un critère et à un savoir</td><td>La totalité du processus collectif ou des essais réalisés</td></tr>
+      <tr><th>Observation de l'enseignante</th><td>Interactions, stratégies, obstacles, décisions visibles pendant la tâche</td><td>Tout ce que l'élève comprend sans verbaliser</td></tr>
+    </tbody>
+  </table></div>
+  <div class="carte"><h3 style="margin-top:0">Un exemple d'alignement</h3><p><strong>Objectif :</strong> justifier une proposition d'aménagement favorable à la biodiversité en mobilisant deux observations et une connaissance scientifique.</p><p><strong>Activité cognitive :</strong> comparer des possibilités, sélectionner des preuves, expliquer un choix, réviser sa proposition.</p><p><strong>Traces :</strong> deux versions commentées du panneau + un court paragraphe individuel « observation → savoir → décision ».</p><p><strong>Critères :</strong> pertinence des observations, justesse scientifique, lien argumenté avec la décision et prise en compte d'une rétroaction.</p></div>
+  <div class="encadre cua"><div class="tete">CUA : réduire les obstacles sans réduire les exigences</div><ul>
+    <li><strong>Accéder à l'information :</strong> ressources en texte et audio, documents visuels lisibles, lexique des notions ou exemplaires de consignes.</li>
+    <li><strong>Planifier et agir :</strong> jalons visibles, gabarit de journal de bord, rôles souples et outils de suivi.</li>
+    <li><strong>Montrer son apprentissage :</strong> justification orale, écrite ou schématique commentée, avec les mêmes exigences de choix et de justification.</li>
+  </ul></div>
+  <div class="encadre vigil"><div class="tete">! Projets culturels : rester responsables</div><p>Si un projet mobilise des savoirs ou des perspectives autochtones, prévoir des sources situées et autorisées, nommer les communautés concernées et éviter de réduire une culture à un décor. On ne demande pas à un élève autochtone de représenter toute sa communauté. Le projet doit préserver l'intégrité des savoirs et la liberté de participation.</p></div>
+  <div class="activite"><div class="tete">✎ Qu'est-ce que l'outil permet vraiment de conclure?</div><p class="consigne">Soyez précis sur la portée d'une trace et ses limites.</p><div data-quiz="evaluer"></div></div>
+</section>
+
+<section id="revision" aria-labelledby="t-revision">
+  <p class="chap-num">Chapitre 5 · Atelier autonome</p>
+  <h2 id="t-revision">Un laboratoire pour analyser et améliorer des pratiques</h2>
+  <p>Ces trois vignettes fictives vous proposent de <strong>tester votre jugement pédagogique</strong> sur une pratique, puis d'envisager une régulation. Il ne s'agit <strong>pas d'une préparation à l'examen de cette année</strong>.</p>
+  <div class="revision-intro"><span>≈ 15–25 minutes par cas</span><span>5 réflexions</span><span>Rétroactions à découvrir</span><span>Enregistrement local</span></div>
+  <div class="revision-cas">
+    <label for="revision-cas-select"><strong>Je choisis une situation :</strong></label><br>
+    <select id="revision-cas-select" style="margin:.5rem 0 1rem;min-width:min(100%,440px)">
+      <option value="projet">A · Un guide des lieux ombragés (projet)</option>
+      <option value="stations">B · Des machines en action (activité)</option>
+      <option value="inverse">C · Une capsule avant la classe (classe inversée)</option>
+    </select>
+    <div id="revision-vignette" aria-live="polite"></div>
+  </div>
+  <div class="activite"><div class="tete">✎ Vérifier la qualité d'une analyse</div><p class="consigne">Une analyse justifiée met en relation faits observés, apprentissages et décision pédagogique.</p><div data-quiz="revision"></div></div>
+  <div id="revision-etapes">
+    <article class="revision-etape"><h3>1. Reconnaître et caractériser la démarche</h3><label class="prompt" for="revision-1">Quelle approche ou organisation reconnaissez-vous? Appuyez votre réponse sur <strong>deux indices concrets</strong> du cas. La mise en œuvre correspond-elle entièrement à son intention?</label><textarea id="revision-1" data-revision-reponse="1" placeholder="L'intention est… Deux indices sont… Toutefois…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="1">J'ai identifié l'approche ou l'organisation visée.</label><label><input type="checkbox" data-revision-verif="1">J'ai cité deux éléments précis de la vignette.</label><label><input type="checkbox" data-revision-verif="1">J'ai relié ces éléments à des critères de la démarche.</label></div><details><summary>Comparer ma réponse à une piste de réflexion</summary><p data-modele="1"></p></details></article>
+    <article class="revision-etape"><h3>2. Interroger la place des savoirs et du guidage</h3><label class="prompt" for="revision-2">Quels savoirs sont visés, et quelle place les décisions des élèves occupent-elles? Ajoutez une lecture <strong>nuancée</strong> de Houssaye ou d'un fondement théorique pertinent.</label><textarea id="revision-2" data-revision-reponse="2" placeholder="La tâche devrait nécessiter… À tel moment, l'enseignante…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="2">J'ai nommé un apprentissage précis.</label><label><input type="checkbox" data-revision-verif="2">J'ai situé un moment où le guidage favorise ou limite la recherche.</label><label><input type="checkbox" data-revision-verif="2">J'ai expliqué un lien théorique plutôt que coller une étiquette.</label></div><details><summary>Comparer ma réponse à une piste de réflexion</summary><p data-modele="2"></p></details></article>
+    <article class="revision-etape"><h3>3. Observer l'activité cognitive réelle</h3><label class="prompt" for="revision-3">Quelles opérations intellectuelles les élèves réalisent-ils <strong>réellement</strong>? Les choix, les rétroactions et la réflexion restent-ils assez présents? Distinguez production et apprentissage.</label><textarea id="revision-3" data-revision-reponse="3" placeholder="Les élèves manipulent ou produisent… Mais pour apprendre à… ils devraient…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="3">J'ai précisé une opération cognitive et non un geste seul.</label><label><input type="checkbox" data-revision-verif="3">J'ai repéré une limite ou une force du déroulement.</label><label><input type="checkbox" data-revision-verif="3">J'ai expliqué l'effet sur l'apprentissage visé.</label></div><details><summary>Comparer ma réponse à une piste de réflexion</summary><p data-modele="3"></p></details></article>
+    <article class="revision-etape"><h3>4. Examiner les preuves d'apprentissage</h3><label class="prompt" for="revision-4">Choisissez <strong>deux des trois outils</strong> proposés. Pour chacun, dites ce qu'il montre réellement, ce qu'il ne permet pas de conclure et une modification qui renforcerait l'alignement.</label><textarea id="revision-4" data-revision-reponse="4" placeholder="L'outil A renseigne sur… mais pas sur… Je proposerais…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="4">J'ai analysé deux outils.</label><label><input type="checkbox" data-revision-verif="4">J'ai distingué le produit, la trace et l'apprentissage qu'elle révèle.</label><label><input type="checkbox" data-revision-verif="4">J'ai proposé un ajustement concret par outil.</label></div><details><summary>Comparer ma réponse à une piste de réflexion</summary><p data-modele="4"></p></details></article>
+    <article class="revision-etape"><h3>5. Réguler la situation avec une priorité</h3><label class="prompt" for="revision-5">Quel changement feriez-vous en premier? Décrivez <strong>ce que les élèves feraient concrètement</strong> et l'effet recherché. Proposez un soutien CUA qui préserve le raisonnement et une autre possibilité.</label><textarea id="revision-5" data-revision-reponse="5" placeholder="Je donnerais d'abord aux élèves la possibilité de… car…"></textarea><div class="revision-verif"><p>Je vérifie :</p><label><input type="checkbox" data-revision-verif="5">J'ai choisi une amélioration prioritaire et réaliste.</label><label><input type="checkbox" data-revision-verif="5">J'ai précisé le travail intellectuel attendu et son effet.</label><label><input type="checkbox" data-revision-verif="5">J'ai préservé l'exigence avec la CUA et mentionné une autre piste.</label></div><details><summary>Comparer ma réponse à une piste de réflexion</summary><p data-modele="5"></p></details></article>
+  </div>
+  <div class="activite">
+    <div class="tete">Mon autoévaluation</div>
+    <p class="revision-compteur" id="revision-compteur" aria-live="polite">0 critère sur 15 vérifié pour ce cas</p>
+    <p>Une analyse solide ne compte pas seulement des caractéristiques. Elle <strong>articule les indices, les apprentissages et la justification des choix</strong>. Les pistes de réflexion ne sont pas des réponses obligatoires.</p>
+    <div class="revision-pied"><button class="btn plein" type="button" id="revision-export">Télécharger mes réflexions (.txt)</button><button class="btn" type="button" id="revision-effacer">Effacer mes réponses pour ce cas</button></div>
+    <p class="revision-avertissement">Les réponses restent dans ce navigateur si le stockage est autorisé. Elles ne sont envoyées à personne. Vous pouvez les télécharger pour en garder une copie.</p>
+    <p id="revision-message" aria-live="polite"></p>
+  </div>
+</section>
+
+<section id="cloture" aria-labelledby="t-cloture">
+  <p class="chap-num">Synthèse</p>
+  <h2 id="t-cloture">Six questions pour examiner un projet ou une pédagogie active</h2>
+  <div class="carte"><ol class="questions">
+    <li><strong>Quel apprentissage?</strong> Quels concepts ou raisonnements la réalisation doit-elle mobiliser?</li>
+    <li><strong>Quelle finalité?</strong> À qui ou à quoi la production sert-elle? Que rend-elle signifiant?</li>
+    <li><strong>Quels choix?</strong> Quelles décisions intellectuelles appartiennent réellement aux élèves?</li>
+    <li><strong>Quels jalons?</strong> Quand peuvent-ils recevoir de la rétroaction et réviser leur travail?</li>
+    <li><strong>Quelles preuves?</strong> Le produit final suffit-il, ou faut-il observer la démarche et écouter une justification?</li>
+    <li><strong>Quel retour réflexif?</strong> Les élèves peuvent-ils nommer ce qui a changé dans leur compréhension?</li>
+  </ol></div>
+  <details><summary>Cinq degrés de qualité d'une analyse (repères inspirés de SOLO)</summary><ul>
+    <li><strong>Compréhension non démontrée :</strong> aucun lien clair avec la situation.</li>
+    <li><strong>Repérage d'un élément pertinent :</strong> un indice correct, mais peu expliqué.</li>
+    <li><strong>Repérage de plusieurs éléments :</strong> plusieurs caractéristiques reconnues, encore juxtaposées.</li>
+    <li><strong>Analyse articulée et justifiée :</strong> les indices sont reliés aux apprentissages et aux décisions des élèves; c'est la cible utile pour un jugement professionnel.</li>
+    <li><strong>Analyse approfondie et transférable :</strong> des conditions et des transferts sont envisagés avec nuance, sans obligation dans ce guide.</li>
+  </ul></details>
+  <div class="encadre garder"><div class="tete">✓ Le fil conducteur à conserver</div><p>« Les élèves font quelque chose » ne suffit pas. Demandez : <strong>que pensent-ils, que choisissent-ils, comment savent-ils qu'ils progressent et que peuvent-ils expliquer à la fin?</strong></p></div>
+  <h3>Références pour approfondir</h3>
+  <ul class="refs">
+    <li>Support du cours 3PDG260 : <em>Famille 2b — Projet et pédagogies actives</em> (13 diapositives).</li>
+    <li>Blumenfeld, P. C., et coll. (1991). <a href="https://doi.org/10.1080/00461520.1991.9653139" target="_blank" rel="noopener noreferrer">Motivating Project-Based Learning: Sustaining the Doing, Supporting the Learning</a>. <em>Educational Psychologist, 26</em>(3–4), 369–398.</li>
+    <li>Bonwell, C. C., &amp; Eison, J. A. (1991). <a href="https://eric.ed.gov/?id=ed336049" target="_blank" rel="noopener noreferrer">Active Learning: Creating Excitement in the Classroom</a>. ASHE-ERIC Higher Education Report no 1.</li>
+    <li>Prince, M. (2004). <a href="https://doi.org/10.1002/j.2168-9830.2004.tb00809.x" target="_blank" rel="noopener noreferrer">Does Active Learning Work? A Review of the Research</a>. <em>Journal of Engineering Education, 93</em>(3), 223–231.</li>
+    <li>Dewey, J. (1938). <em>Experience and Education</em>. Macmillan. Kilpatrick, W. H. (1918). <em>The Project Method</em>.</li>
+  </ul>
+  <p class="petit">Ce guide constitue une ressource facultative de préparation et d'approfondissement pour une prochaine année de 3PDG260. Les vignettes sont fictives et les rétroactions proposent des pistes d'analyse.</p>
+  <a class="haut" href="#accueil">↑ Retour à l'accueil</a>
+</section>
+
+</main></div>
+<script>
+(function(){
+"use strict";
+
+var QUIZ={
+  diagnostic:[{q:"Qu'est-ce qui rend une activité authentiquement formatrice?",a:["La classe fabrique un bel objet qui attire l'attention.","Les élèves manipulent longtemps du matériel, même sans expliquer.","Les élèves mobilisent des savoirs, choisissent, reçoivent une rétroaction et réfléchissent à leur démarche."],c:2,e:"L'action aide à apprendre lorsqu'elle s'accompagne de décisions intellectuelles, de liens aux savoirs et d'occasions de révision."}],
+  fondements:[{q:"Deux équipes présentent de superbes expositions. Quelle observation est la meilleure preuve d'apprentissage?",a:["Chaque élève peut expliquer une décision prise en utilisant une notion pertinente et une observation.","Les panneaux sont beaux et respectent les couleurs demandées.","Le matériel a été rangé rapidement."],c:0,e:"Le jugement sur l'apprentissage doit s'appuyer sur des manifestations de compréhension et d'argumentation, pas seulement sur la qualité visuelle du produit."}],
+  demarches:[
+    {q:"La classe construit un jardin en plusieurs étapes, avec essais, commentaires et améliorations. Quelle analyse est la plus plausible?",a:["Il s'agit nécessairement d'un cours magistral.","On peut parler d'approche par projet si la réalisation demande de mobiliser des savoirs et de justifier les choix.","Toute activité extérieure suffit à définir un projet."],c:1,e:"C'est le lien entre défi signifiant, savoirs, décisions, jalons et révision qui fait la valeur du projet."},
+    {q:"Les élèves regardent une vidéo à domicile, puis recopient un résumé pendant tout le cours. Peut-on dire que la classe est devenue active?",a:["Oui : le visionnement à domicile suffit.","Oui : les vidéos sont toujours motivantes.","Pas nécessairement : l'organisation est inversée, mais l'activité cognitive en classe demeure peu transformée."],c:2,e:"La classe inversée réorganise l'accès initial aux ressources. Elle devient intéressante si le temps accompagné permet un travail intellectuel plus exigeant."},
+    {q:"Un projet comprend un moment d'explication explicite et une enquête. Est-ce contradictoire avec la famille 2b?",a:["Non : des modèles et approches peuvent être combinés pour soutenir des apprentissages cohérents.","Oui : le projet doit toujours bannir toute explication de l'enseignante.","Oui : un projet relève d'une seule famille à chaque instant."],c:0,e:"L'approche par projet n'exige pas une autonomie sans soutien. Il faut examiner la fonction de chaque moment pour les apprentissages."}
+  ],
+  choisir:[
+    {q:"Une enseignante veut faire construire des affiches sur le recyclage. Quel ajustement rend le projet plus formateur?",a:["Donner un modèle complet à recopier pour accélérer.","Demander aux élèves de comparer deux mesures de réduction des déchets et de justifier leur recommandation pour un public précis.","Évaluer surtout l'originalité des illustrations."],c:1,e:"La recommandation justifiée mobilise des connaissances, suppose un choix et permet d'évaluer les raisons plutôt que la décoration."},
+    {q:"Des élèves perdent le fil d'un projet long. Quelle aide préserve leur activité cognitive?",a:["Diviser la tâche en jalons et fournir un outil de suivi, tout en laissant les élèves décider et justifier.","Fournir toutes les réponses et toutes les décisions.","Retirer les critères de réussite pour accroître la liberté."],c:0,e:"Un cadre clair peut soutenir l'autonomie réelle. Il n'est pas nécessaire d'abandonner les élèves pour qu'ils apprennent à choisir."}
+  ],
+  conduire:[
+    {q:"Quel moment est le plus utile pour une rétroaction qui vise la révision du travail?",a:["Après que le travail a été remis, sans possibilité de modification.","Uniquement au début, avant que les élèves aient essayé.","Au cours de la production, lorsque les élèves peuvent encore comparer leur travail aux critères et l'améliorer."],c:2,e:"Une rétroaction formative est particulièrement utile quand l'élève peut agir sur elle, réviser et expliquer le changement."},
+    {q:"Lors du bilan final, que demander pour favoriser une réflexion authentique?",a:["« Avez-vous apprécié le projet? » et rien d'autre.","« Quel choix avez-vous révisé, à partir de quelle information, et qu'avez-vous appris? »","« Qui a fait la plus belle affiche? »"],c:1,e:"Cette question rend observables une modification de la démarche, les preuves mobilisées et une prise de conscience de l'apprentissage."}
+  ],
+  evaluer:[
+    {q:"Pour évaluer la capacité à justifier un aménagement, on regarde seulement l'affiche finale. Que conclure?",a:["L'affiche peut fournir des indices utiles, mais ne montre pas nécessairement les choix et les justifications de chaque élève.","L'affiche suffit toujours à démontrer toute la démarche.","Une production finale n'a jamais de valeur pédagogique."],c:0,e:"La production peut renseigner sur une partie des acquis. Pour juger une justification, examinez aussi le raisonnement et des traces individuelles au besoin."},
+    {q:"Un journal de bord contient uniquement « aujourd'hui, nous avons collé les images ». Quelle amélioration est la plus pertinente?",a:["Le rendre plus long sans changer les questions.","Le remplacer par un tableau de présences.","Y ajouter « Quel choix? Sur quelle preuve? Qu'avons-nous modifié et pourquoi? »"],c:2,e:"Ces questions conduisent à documenter l'activité cognitive et les décisions, plutôt qu'une simple chronologie des gestes."}
+  ],
+  revision:[{q:"Quelle formulation constitue déjà un jugement pédagogique articulé?",a:["« Les élèves ont bougé; la pédagogie était active. »","« Le projet est très amusant et le résultat est joli. »","« Les élèves ont construit une maquette, mais les dimensions leur étaient fournies; pour viser la comparaison des solutions, il faudrait leur faire choisir et justifier ces dimensions selon des critères. »"],c:2,e:"La dernière réponse relie un fait précis, une limite du travail intellectuel et une modification liée à l'objectif d'apprentissage."}]
+};
+
+function buildQuiz(container,items,key){
+  items.forEach(function(q,idx){
+    var box=document.createElement("div");box.className="item";
+    var fs=document.createElement("fieldset"),legend=document.createElement("legend");legend.textContent=q.q;fs.appendChild(legend);
+    var name="quiz-"+key+"-"+idx,offset=(key.length+idx)%q.a.length;
+    for(var step=0;step<q.a.length;step++){
+      var j=(offset+step)%q.a.length;
+      var label=document.createElement("label");label.className="choix";
+      var input=document.createElement("input");input.type="radio";input.name=name;input.value=String(j);
+      var span=document.createElement("span");span.textContent=q.a[j];label.appendChild(input);label.appendChild(span);fs.appendChild(label);
+    }
+    var btn=document.createElement("button");btn.type="button";btn.className="btn plein";btn.textContent="Vérifier ma réponse";
+    var retro=document.createElement("div");retro.setAttribute("role","status");retro.setAttribute("aria-live","polite");
+    btn.addEventListener("click",function(){var checked=fs.querySelector("input:checked");if(!checked){retro.className="retro neutre";retro.textContent="Choisissez d'abord une réponse.";return;}var good=Number(checked.value)===q.c;retro.className="retro "+(good?"ok":"nok");retro.textContent=(good?"✓ Oui. ":"À revoir. ")+q.e;});
+    box.appendChild(fs);box.appendChild(btn);box.appendChild(retro);container.appendChild(box);
+  });
+}
+document.querySelectorAll("[data-quiz]").forEach(function(node){var key=node.getAttribute("data-quiz");if(QUIZ[key])buildQuiz(node,QUIZ[key],key);});
+
+var tabs=Array.prototype.slice.call(document.querySelectorAll("#onglets-moments [role=tab]"));
+function activate(i,focus){tabs.forEach(function(tab,j){var yes=j===i;tab.setAttribute("aria-selected",yes?"true":"false");tab.tabIndex=yes?0:-1;document.getElementById("pan-"+j).hidden=!yes;});if(focus)tabs[i].focus();}
+tabs.forEach(function(tab,i){tab.addEventListener("click",function(){activate(i,false);});tab.addEventListener("keydown",function(e){var j=null;if(e.key==="ArrowRight")j=(i+1)%tabs.length;else if(e.key==="ArrowLeft")j=(i+tabs.length-1)%tabs.length;else if(e.key==="Home")j=0;else if(e.key==="End")j=tabs.length-1;if(j!==null){e.preventDefault();activate(j,true);}});});
+
+var CASES={
+  projet:{name:"A · Un guide des lieux ombragés",kind:"Approche par projet",description:
+    "<h3>A · Un guide des lieux ombragés</h3><p>Une classe de 5e année veut créer un <strong>petit guide des endroits ombragés du quartier</strong> pour de nouvelles familles. Les élèves devraient comparer des lieux selon leur accessibilité, l'ombrage à différentes heures et les usages possibles. Les connaissances mobilisées touchent notamment l'observation du milieu, les mesures et l'interprétation de cartes.</p><p>L'enseignante fournit des photos et des cartes. Pour assurer la réussite, elle a déjà sélectionné « les cinq meilleurs lieux » et préparé les recommandations finales. Chaque équipe doit surtout placer les photos sur une page et recopier les explications. Le guide est imprimé rapidement; les élèves n'ont ni comparé les choix, ni reçu de rétroaction sur une première version.</p><p><strong>Trois outils :</strong> (A) une grille évaluant la présentation graphique; (B) une feuille de suivi des tâches accomplies; (C) une réponse individuelle « je recommande ce lieu parce que… » avec deux observations et une contrainte.</p>",models:[
+      "Une approche par projet est visée : production identifiable (un guide), public cible (les nouvelles familles) et contexte signifiant. Toutefois, la sélection des lieux et les recommandations sont déjà fixées; l'activité réalisée consiste surtout à mettre en page et recopier. Le caractère « projet » ne garantit donc pas, à lui seul, l'apprentissage attendu.",
+      "L'objectif devrait faire mobiliser des connaissances sur l'ombrage, l'accès et la lecture de carte. En choisissant les lieux à la place des élèves, l'enseignante privilégie momentanément la relation enseignante–savoir; les élèves ont peu d'occasions de travailler la relation élèves–savoir par une décision argumentée. Un enseignement ciblé des outils demeure toutefois possible et utile.",
+      "Les élèves repèrent des photos et rédigent des textes fournis : ils exécutent une production, mais ne comparent pas les lieux ni ne justifient leur pertinence. La rétroaction ne sert pas à réviser les choix. L'apprentissage visé — évaluer des options à partir de mesures et de critères — reste peu observable.",
+      "On peut choisir A et C : A renseigne sur la lisibilité et l'apparence du guide, mais pas sur la justification; y ajouter des critères de pertinence des lieux améliorerait l'outil. C pourrait montrer que chaque élève relie deux observations à une recommandation; il faudrait laisser une véritable possibilité de choisir le lieu. B, si choisi, décrit le suivi du travail sans démontrer la compréhension.",
+      "Je redonnerais aux élèves le choix entre plusieurs lieux à partir d'observations ou de mesures communes. Chaque équipe comparerait deux sites, justifierait sa recommandation, recevrait une rétroaction et réviserait le guide. Un plan lisible, des pictogrammes et une version audio des consignes soutiendraient l'accès sans fournir la décision. Une alternative serait un test du guide auprès d'un autre groupe avant sa finalisation."
+    ]},
+  stations:{name:"B · Des machines en action",kind:"Pédagogie active",description:
+    "<h3>B · Des machines en action</h3><p>En 4e année, des élèves visitent trois stations consacrées aux <strong>machines simples</strong> : levier, poulie et plan incliné. L'intention annoncée est de <strong>comparer leur utilité pour déplacer une charge</strong> et d'expliquer dans quelles conditions un montage aide à accomplir une tâche.</p><p>Chaque fiche indique les gestes à effectuer, le matériel exact, le bon réglage et la conclusion attendue. Les élèves font fonctionner les trois montages avec enthousiasme, mais ne prédisent pas les résultats, ne discutent pas les conditions de comparaison et ne gardent presque aucune donnée. À la fin, l'enseignante demande : « Avez-vous eu du plaisir à expérimenter? », puis les stations sont démontées.</p><p><strong>Trois outils :</strong> (A) une liste de vérification du respect des étapes; (B) une photo des montages réussis; (C) un billet individuel comparant deux montages et justifiant un choix à partir d'une observation.</p>",models:[
+      "La situation est organisée en stations de manipulation, une modalité souvent associée aux pédagogies actives. Pourtant, les élèves suivent un protocole et une conclusion fournis. La manipulation seule ne garantit pas l'activité intellectuelle visée : comparer et expliquer les effets de deux montages.",
+      "La classe devrait mobiliser l'observation, la comparaison et la justification d'une solution technique. Ici, l'enseignante détient les réglages et les conclusions, ce qui rend la relation enseignante–savoir assez visible. Une relance laissant choisir les variables ou les montages rendrait plus manifeste la relation élèves–savoir; un court modelage de sécurité resterait approprié.",
+      "Les élèves assemblent correctement et s'engagent matériellement, mais ne prédisent pas, ne comparent pas des observations ni ne révisent d'hypothèses. Le bilan sur le plaisir renseigne sur l'expérience affective, pas sur l'apprentissage scientifique. On peut être actif physiquement sans analyser les effets des dispositifs.",
+      "On peut choisir A et C : A indique si les étapes ont été respectées, mais pas si l'élève peut expliquer l'utilité du montage; y ajouter une demande de justification serait utile. C rend mieux visible la comparaison et le raisonnement individuels, à condition que les élèves aient recueilli les observations nécessaires. B, si choisi, prouve qu'un montage a été réalisé, sans montrer pourquoi il fonctionne.",
+      "Je transformerais une station en défi : déplacer une même charge avec deux dispositifs possibles. Les élèves feraient une prédiction, réaliseraient un essai comparable, noteraient ce qu'ils observent et justifieraient leur choix. Des fiches illustrées et du matériel adapté préserveraient l'accès, sans fournir la conclusion. Une alternative serait un tableau collectif de comparaison suivi d'un nouvel essai."
+    ]},
+  inverse:{name:"C · Une capsule avant la classe",kind:"Classe inversée",description:
+    "<h3>C · Une capsule avant la classe</h3><p>En 6e année, l'enseignante souhaite que les élèves <strong>comparent des moyens de communication d'hier et d'aujourd'hui</strong> et expliquent comment ils transforment les échanges. Elle leur demande de regarder à la maison une capsule de huit minutes présentant quelques exemples historiques.</p><p>En classe, l'enseignante reprend ensuite tout le contenu en exposé de 25 minutes pour s'assurer que tout le monde a vu les notions. Les élèves remplissent un texte à trous, puis enregistrent un balado d'une minute en lisant un texte fourni. Les moyens de communication ne sont jamais réellement comparés, et les élèves n'ont pas à justifier de conséquences sur les échanges.</p><p><strong>Trois outils :</strong> (A) un court questionnaire sur les dates et définitions de la capsule; (B) une grille de clarté de l'enregistrement; (C) un court paragraphe individuel comparant deux moyens de communication et justifiant une conséquence.</p>",models:[
+      "La classe inversée est identifiable par la capsule visionnée avant le cours. Toutefois, le temps collectif reprend surtout l'exposé, le texte à trous et une lecture imposée. L'organisation temporelle est inversée, mais ce n'est pas une preuve d'apprentissage actif ni d'approche par projet véritablement ouverte.",
+      "Le but devrait être de comparer deux moyens de communication en fonction de leurs effets sur les échanges. La préparation à domicile pourrait libérer du temps pour une analyse guidée, mais ici l'enseignante transmet et organise essentiellement les réponses; la relation enseignante–savoir reste très visible. La classe inversée n'impose pas un pôle de Houssaye particulier.",
+      "Les élèves reconnaissent des informations et lisent un texte, mais n'analysent pas les effets des moyens de communication. Produire un balado n'implique pas automatiquement une décision ou une compréhension plus approfondie. La visée de comparaison et de justification demeure peu travaillée.",
+      "On peut retenir A et C : A vérifie des rappels de connaissances utiles, mais pas la comparaison; le compléter par « en quoi ces moyens diffèrent-ils? » améliorerait l'alignement. C montre le raisonnement attendu si les élèves disposent de documents à comparer. B, si choisi, renseigne sur l'expression orale et la lisibilité du balado, pas sur les liens historiques.",
+      "Je conserverais une courte préparation accessible avant le cours, avec une solution de rechange en classe, puis utiliserais le temps accompagné pour analyser deux sources historiques et discuter les changements dans les échanges. Les élèves produiraient une comparaison justifiée, éventuellement sous forme de balado choisi. Une transcription de la capsule et un tableau de critères soutiendraient l'accès sans donner les arguments. Une alternative serait d'introduire la capsule en classe puis de garder les mêmes tâches d'analyse."
+    ]}
+};
+
+var select=document.getElementById("revision-cas-select");
+var vignette=document.getElementById("revision-vignette");
+var champs=Array.prototype.slice.call(document.querySelectorAll("[data-revision-reponse]"));
+var coches=Array.prototype.slice.call(document.querySelectorAll("[data-revision-verif]"));
+var modeles=Array.prototype.slice.call(document.querySelectorAll("[data-modele]"));
+var message=document.getElementById("revision-message");
+var prefix="3pdg260_famille2b_atelier_v1_";
+var fallback={};
+function key(k){return prefix+k;}
+function load(k){try{return localStorage.getItem(key(k));}catch(e){return fallback[k]||null;}}
+function save(k,v){try{localStorage.setItem(key(k),v);}catch(e){fallback[k]=v;}}
+function remove(k){try{localStorage.removeItem(key(k));}catch(e){delete fallback[k];}}
+function saveCase(){save(select.value,JSON.stringify({answers:champs.map(function(x){return x.value;}),checked:coches.map(function(x){return x.checked;})}));}
+function counter(){var n=coches.filter(function(x){return x.checked;}).length;document.getElementById("revision-compteur").textContent=n+" critère"+(n>1?"s":"")+" sur 15 vérifié"+(n>1?"s":"")+" pour ce cas";}
+function renderCase(){var k=select.value,cas=CASES[k],data={};vignette.innerHTML=cas.description;try{data=JSON.parse(load(k)||"{}");}catch(e){data={};}champs.forEach(function(t,i){t.value=data.answers&&typeof data.answers[i]==="string"?data.answers[i]:"";});coches.forEach(function(b,i){b.checked=!!(data.checked&&data.checked[i]);});modeles.forEach(function(p,i){p.textContent=cas.models[i];p.closest("details").open=false;});message.textContent="";counter();}
+select.addEventListener("change",renderCase);
+champs.forEach(function(x){x.addEventListener("input",saveCase);});
+coches.forEach(function(x){x.addEventListener("change",function(){saveCase();counter();});});
+document.getElementById("revision-effacer").addEventListener("click",function(){if(!window.confirm("Effacer les cinq réflexions et les 15 critères pour ce cas seulement?"))return;remove(select.value);renderCase();message.textContent="Les réponses de ce cas sont effacées. Les autres cas restent conservés.";});
+document.getElementById("revision-export").addEventListener("click",function(){var title=CASES[select.value].name;var headers=["Caractériser la démarche","Savoirs et guidage","Activité cognitive","Preuves d'apprentissage","Décision professionnelle et CUA"];var lines=["3PDG260 · Famille 2b · Atelier autonome",title,"Mes réflexions personnelles (non transmises)",""];champs.forEach(function(t,i){lines.push((i+1)+". "+headers[i],t.value.trim()||"[Aucune réponse]","");});lines.push("Autoévaluation : "+coches.filter(function(x){return x.checked;}).length+" / 15 critères cochés");var blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="3PDG260_famille2b_atelier_"+select.value+".txt";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);message.textContent="Votre fichier de réflexion a été préparé pour le téléchargement.";});
+renderCase();
+
+var menu=document.querySelector("nav.menu"),mobile=document.getElementById("mobile-menu");
+mobile.addEventListener("click",function(){var open=menu.classList.toggle("ouvert");mobile.setAttribute("aria-expanded",open?"true":"false");});
+document.querySelectorAll("nav.menu a").forEach(function(a){a.addEventListener("click",function(){menu.classList.remove("ouvert");mobile.setAttribute("aria-expanded","false");});});
+var navlinks=Array.prototype.slice.call(document.querySelectorAll("nav.menu a[href^='#']"));
+function progression(){var max=document.documentElement.scrollHeight-window.innerHeight;document.getElementById("progression-barre").style.width=(max>0?Math.min(100,Math.max(0,100*window.scrollY/max)):100)+"%";var current="accueil";document.querySelectorAll("main section[id]").forEach(function(s){if(s.getBoundingClientRect().top<=180)current=s.id;});navlinks.forEach(function(link){var on=link.getAttribute("href")==="#"+current;link.classList.toggle("actif",on);if(on)link.setAttribute("aria-current","location");else link.removeAttribute("aria-current");});}
+window.addEventListener("scroll",progression,{passive:true});window.addEventListener("resize",progression);progression();
+})();
+</script>
+</body>
+</html>
